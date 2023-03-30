@@ -1,0 +1,49 @@
+{% extends 'crudapp/base.html' %}
+
+{% block styles %}
+<style>
+    .detail {
+        text-align: left;
+        max-width: 400px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .back-arrow {
+        background: green;
+        color: white;
+        border: none;
+        border-radius: 6px;
+        padding: 8px 12px;
+        margin-top: 2rem;
+    }
+</style>
+{% endblock styles %}
+
+{% block content %}
+
+<div class="detail">
+    <h1>EMPLOYEE DETAIL</h1>
+    <p>ID:{{ contact.id }}</p>
+    <p>Name:{{ contact.firstName }} {{ contact.lastName }}</p>
+    <p>Phone No:{{ contact.phone }}</p>
+    <p>Description:{{ contact.description }}</p>
+    <P>Gender:{{ contact.emp_gender}}</P>
+    <p>DOB:{{contact.emp_dob}}</p>
+
+    <button class="back-arrow">&larr; Back</button>
+</div>
+
+<script>
+
+</script>
+{% endblock content %}
+
+{% block scripts %}
+<script>
+    function goBack() {
+        window.history.back();
+    }
+    const backBtn = document.querySelector(".back-arrow");
+    backBtn.onclick = goBack;
+</script>
+{% endblock scripts %}
